@@ -40,7 +40,7 @@ public class Persona {
 
 /**
  * Método que devuelve el valor del atributo ID
- * @return 
+ * @return ID
  */    
     public String getID() {
         return this.ID;
@@ -56,7 +56,7 @@ public class Persona {
 
 /**
  * Método que devuelve el valor del atributo nombre
- * @return 
+ * @return nombre
  */    
     public String getNombre() {
         return this.nombre;
@@ -69,7 +69,7 @@ public class Persona {
     
 /**
  * Método que devuelve el valor del atributo apellido
- * @return 
+ * @return apellido
  */
     public String getApellido() {
         return this.apellido;
