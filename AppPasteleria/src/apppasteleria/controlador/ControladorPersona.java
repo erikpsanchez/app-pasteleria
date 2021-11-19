@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package apppasteleria.controlador;
 
+import apppasteleria.Administrador;
+import apppasteleria.modelo.Cliente;
+import apppasteleria.Empleado;
+import apppasteleria.Persona;
 import java.util.ArrayList;
 
 /**
@@ -13,11 +17,57 @@ import java.util.ArrayList;
  */
 public class ControladorPersona {
     
-    ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-    ArrayList<Administrador> administradores = new ArrayList<Administrador>();
-    ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+    ArrayList<Cliente> clientes = new ArrayList<>();
+    ArrayList<Administrador> administradores = new ArrayList<>();
+    ArrayList<Empleado> empleados = new ArrayList<>();
    
+    public int buscarCliente(String ID){
+        for(int i=0;i<clientes.size();i++){
+            
+            if (clientes == null){
+                return i;
+            }
+            else{
+                if(ID.equals(clientes.get(i).getID())){
+                return i;
+                }
+            }
+            
+        }
+        return -1;
+    }
     
+    
+    public int buscarEmpleado(String ID){
+        for(int i=0;i<empleados.size();i++){
+             if (empleados == null){
+                return i;
+            }
+            else{
+                if(ID.equals(empleados.get(i).getID())){
+                return i;
+                }
+            }
+        }
+        return -1;
+    }
+    
+    public int buscarAdministrador(String ID){
+        for(int i=0;i<administradores.size();i++){
+             if (administradores == null){
+                return i;
+            }
+            else{
+                if(ID.equals(administradores.get(i).getID())){
+                return i;
+                }
+            }
+        }
+        return -1;
+    }
+    
+    
+    /*
     public int buscarCliente(String ID){
         for(int i=0;i<clientes.size();i++){
             if(ID.equals(clientes.indexOf(i).ID)){
@@ -43,7 +93,7 @@ public class ControladorPersona {
             }
         }
         return -1;
-    }
+    }*/
     
     
     public boolean existeCliente(String ID){
@@ -61,16 +111,39 @@ public class ControladorPersona {
             return false;
         }
     }
-    
+    /*
     public boolean existeAdministrador(String ID){
         if(buscarAdministrador(ID) != -1){
             return true;
         }else{
             return false;
         }
+    }*/
+    
+    public void agregarCliente(Persona p){
+        if(!existeCliente(p.getID())){
+            clientes.add((Cliente) p);
+            System.out.println("Registro exitoso clienten.");
+        }
+        
+    }
+    public void agregarEmpleado(Persona Emp){
+        if(!existeEmpleado(Emp.getID())){
+            empleados.add((Empleado) Emp);
+            System.out.println("Registro exitoso Empleado");
+        }
+        
     }
     
-     
+    public void agregarAdministrador(Persona Admin){
+        if(!existeEmpleado(Admin.getID())){
+            administradores.add((Administrador) Admin);
+            System.out.println("Registro exitoso Administrador");
+        }
+        
+    }
+   
+    /*
     public void agregarCliente(String ID, String nombre, String apellido, Integer sweetpoints){
         if(!existeCliente(ID)){
             clientes.add(new Cliente(ID, nombre, apellido, sweetpoints));
@@ -90,7 +163,7 @@ public class ControladorPersona {
             administradores.add(new Administrador(ID, nombre, apellido, password));
         }
         
-    }
+    }*/
     
     
     public void eliminarCliente(String ID){
@@ -98,7 +171,7 @@ public class ControladorPersona {
             clientes.remove(buscarCliente(ID));
         }
     }
-    
+    /*
     public void eliminarEmpleado(String ID){
         if(existeEmpleado(ID)){
             empleados.remove(buscarEmpleado(ID));
@@ -109,7 +182,7 @@ public class ControladorPersona {
         if(existeAdministrador(ID)){
             administradores.remove(buscarAdministrador(ID));
         }
-    }
+    }*/
       
     
 }
