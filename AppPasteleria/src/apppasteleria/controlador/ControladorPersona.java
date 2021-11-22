@@ -80,9 +80,14 @@ public class ControladorPersona {
     
      
     public void agregarCliente(String ID, String nombre, String apellido, Integer sweetpoints){
-        if(!existeCliente(ID)){
-            clientes.add(new Cliente(ID, nombre, apellido, sweetpoints));
+        try{
+            if(!existeCliente(ID)){
+                clientes.add(new Cliente(ID, nombre, apellido, sweetpoints));
+            }
+        }catch(NumberFormatException e){
+            System.out.println("Datos ingresados en el campo 'sweetpoints' deben ser números.");
         }
+        
         
     }
     
