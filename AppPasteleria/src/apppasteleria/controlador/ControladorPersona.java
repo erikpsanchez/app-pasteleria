@@ -3,8 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package apppasteleria.controlador;
 
+/**
+ *
+ * @author leodz
+ */
+
+import apppasteleria.Administrador;
+import apppasteleria.Cliente;
+import apppasteleria.Empleado;
 import java.util.ArrayList;
 
 /**
@@ -13,14 +21,14 @@ import java.util.ArrayList;
  */
 public class ControladorPersona {
     
-    ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-    ArrayList<Administrador> administradores = new ArrayList<Administrador>();
-    ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+    ArrayList<Cliente> clientes = new ArrayList<>();
+    ArrayList<Administrador> administradores = new ArrayList<>();
+    ArrayList<Empleado> empleados = new ArrayList<>();
    
     
     public int buscarCliente(String ID){
         for(int i=0;i<clientes.size();i++){
-            if(ID.equals(clientes.indexOf(i).ID)){
+            if(ID.equals(clientes.get(i).getID())){
                 return i;
             }
         }
@@ -29,7 +37,7 @@ public class ControladorPersona {
     
     public int buscarEmpleado(String ID){
         for(int i=0;i<empleados.size();i++){
-            if(ID.equals(empleados.indexOf(i).ID)){
+            if(ID.equals(empleados.get(i).getID())){
                 return i;
             }
         }
@@ -38,7 +46,7 @@ public class ControladorPersona {
     
     public int buscarAdministrador(String ID){
         for(int i=0;i<administradores.size();i++){
-            if(ID.equals(administradores.indexOf(i).ID)){
+            if(ID.equals(administradores.get(i).getID())){
                 return i;
             }
         }
@@ -72,9 +80,14 @@ public class ControladorPersona {
     
      
     public void agregarCliente(String ID, String nombre, String apellido, Integer sweetpoints){
-        if(!existeCliente(ID)){
-            clientes.add(new Cliente(ID, nombre, apellido, sweetpoints));
+        try{
+            if(!existeCliente(ID)){
+                clientes.add(new Cliente(ID, nombre, apellido, sweetpoints));
+            }
+        }catch(NumberFormatException e){
+            System.out.println("Datos ingresados en el campo 'sweetpoints' deben ser números.");
         }
+        
         
     }
     
@@ -95,21 +108,22 @@ public class ControladorPersona {
     
     public void eliminarCliente(String ID){
         if(existeCliente(ID)){
-            clientes.remove(buscarCliente(ID));
+            clientes.remove(clientes.get(buscarCliente(ID)));
         }
     }
     
     public void eliminarEmpleado(String ID){
         if(existeEmpleado(ID)){
-            empleados.remove(buscarEmpleado(ID));
+            empleados.remove(empleados.get(buscarEmpleado(ID)));
         }
     }
     
     public void eliminarAdministrador(String ID){
         if(existeAdministrador(ID)){
-            administradores.remove(buscarAdministrador(ID));
+            administradores.remove(administradores.get(buscarAdministrador(ID)));
         }
     }
       
     
 }
+
