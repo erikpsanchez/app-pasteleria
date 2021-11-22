@@ -46,4 +46,10 @@ public class Persona {
         return this.apellido;
     }
     
+    @Override
+    public String toString() {
+        return "ID: "+ ID +" Nombre: "+ nombre+ " Apellido: "+ apellido ;
+    }
+    
+    
 }

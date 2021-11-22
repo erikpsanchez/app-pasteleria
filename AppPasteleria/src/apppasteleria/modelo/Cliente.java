@@ -6,6 +6,8 @@
 package apppasteleria.modelo;
 
 import apppasteleria.Persona;
+import apppasteleria.Persona;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,6 +33,6 @@ public class Cliente extends Persona {
     
     @Override
     public String toString() {
-        return "";
+        return super.toString()+ " SweetPoints acumulados:" + sweetpoints;
     }
 }

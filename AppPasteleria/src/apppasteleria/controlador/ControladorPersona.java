@@ -7,7 +7,8 @@ package apppasteleria.controlador;
 
 import apppasteleria.Administrador;
 import apppasteleria.modelo.Cliente;
-import apppasteleria.Empleado;
+import apppasteleria.modelo.Empleado;
+import apppasteleria.FXMLDocumentController;
 import apppasteleria.Persona;
 import java.util.ArrayList;
 
@@ -20,48 +21,33 @@ public class ControladorPersona {
     ArrayList<Cliente> clientes = new ArrayList<>();
     ArrayList<Administrador> administradores = new ArrayList<>();
     ArrayList<Empleado> empleados = new ArrayList<>();
+    
    
     public int buscarCliente(String ID){
-        for(int i=0;i<clientes.size();i++){
-            
-            if (clientes == null){
-                return i;
+            for(int i=0;i<clientes.size();i++){
+                 if(ID.equals(clientes.get(i).getID())){      
+                    return i;
+                    }
             }
-            else{
-                if(ID.equals(clientes.get(i).getID())){
-                return i;
-                }
-            }
-            
-        }
         return -1;
     }
     
     
     public int buscarEmpleado(String ID){
-        for(int i=0;i<empleados.size();i++){
-             if (empleados == null){
-                return i;
+            for(int i=0;i<empleados.size();i++){
+                    if(ID.equals(empleados.get(i).getID())){
+                    return i;
+                    }
+
             }
-            else{
-                if(ID.equals(empleados.get(i).getID())){
-                return i;
-                }
-            }
-        }
         return -1;
     }
     
     public int buscarAdministrador(String ID){
         for(int i=0;i<administradores.size();i++){
-             if (administradores == null){
-                return i;
-            }
-            else{
                 if(ID.equals(administradores.get(i).getID())){
                 return i;
                 }
-            }
         }
         return -1;
     }
@@ -98,8 +84,10 @@ public class ControladorPersona {
     
     public boolean existeCliente(String ID){
         if(buscarCliente(ID) != -1){
+          
             return true;
         }else{
+            
             return false;
         }
     }
@@ -111,34 +99,42 @@ public class ControladorPersona {
             return false;
         }
     }
-    /*
+    
     public boolean existeAdministrador(String ID){
         if(buscarAdministrador(ID) != -1){
             return true;
         }else{
             return false;
         }
-    }*/
-    
+    }
+     
     public void agregarCliente(Persona p){
-        if(!existeCliente(p.getID())){
+        if(existeCliente(p.getID())== false){
             clientes.add((Cliente) p);
-            System.out.println("Registro exitoso clienten.");
+            
+        }else{
+            System.out.println("Registro fallido.El numero "+p.getID()+" ya se encuentra ");
         }
         
     }
+    
     public void agregarEmpleado(Persona Emp){
-        if(!existeEmpleado(Emp.getID())){
+       
+        if(existeEmpleado(Emp.getID())== false){
             empleados.add((Empleado) Emp);
-            System.out.println("Registro exitoso Empleado");
+            imprimir();
+           
+        }else{
+            System.out.println("Registro fallido.");
         }
-        
     }
     
     public void agregarAdministrador(Persona Admin){
-        if(!existeEmpleado(Admin.getID())){
+           
+        if(existeAdministrador(Admin.getID())== false){
             administradores.add((Administrador) Admin);
-            System.out.println("Registro exitoso Administrador");
+        }else{
+            System.out.println("Registro fallido.");
         }
         
     }
@@ -164,7 +160,25 @@ public class ControladorPersona {
         }
         
     }*/
-    
+    public void imprimir(){
+   
+         System.out.println("\nLista Clinetes\n");
+         for (int i = 0; i < clientes.size() ; i++) {
+            System.out.println(clientes.get(i).toString());
+         }
+         System.out.println("\nLista Administradores\n");
+         
+         for (int in = 0; in < administradores.size(); in++) {
+             System.out.println(administradores.get(in).toString());
+         }
+        
+         System.out.println("\nLista Empleados\n");
+         for (int index = 0; index < empleados.size(); index++) {
+            System.out.println(empleados.get(index).toString());
+         }
+       
+       
+    }
     
     public void eliminarCliente(String ID){
         if(existeCliente(ID)){

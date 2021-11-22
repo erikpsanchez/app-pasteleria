@@ -5,6 +5,8 @@
  */
 package apppasteleria;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author erikp
@@ -18,6 +20,7 @@ public class Administrador extends Persona {
         super(ID, nombre, apellido);
         this.password = password;
     }
+
     
     public void setPassword(String password) {
         this.password = password;
@@ -29,6 +32,6 @@ public class Administrador extends Persona {
     
     @Override
     public String toString() {
-        return "";
+        return super.toString()+ " Password: "+ "Sin Acceso";
     }
 }

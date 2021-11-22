@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package apppasteleria;
+package apppasteleria.modelo;
+
+import apppasteleria.Persona;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,9 +18,9 @@ public class Empleado extends Persona {
     public Empleado(String ID, String nombre, String apellido) {
         super(ID, nombre, apellido);
     }
-    
+
     @Override
     public String toString() {
-        return "";
+        return super.toString();
     }
 }
