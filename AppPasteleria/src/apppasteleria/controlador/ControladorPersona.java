@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 public class ControladorPersona {
     
+    
     ArrayList<Cliente> clientes = new ArrayList<>();
     ArrayList<Administrador> administradores = new ArrayList<>();
     ArrayList<Empleado> empleados = new ArrayList<>();
