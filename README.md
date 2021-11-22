@@ -8,3 +8,14 @@
 
 ## Prototype presentation
 [Prototipo](https://www.figma.com/proto/YS2muZcxrJag176gorgT5o/Boceto-La-Rebanada?node-id=2%3A5&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=16%3A88 "Prototipo")
+
+## Team
+
+* Maria Belen Couoh Chan.
+* Leandro Angel Dzib Nauat.
+* Carlos Fernando Sánchez Chuc.
+* Erik Alejandro Poot Sánchez.
+
+# @Tutor
+
+* Jose Luiz López Martínez
