@@ -8,17 +8,19 @@ package apppasteleria.controlador;
 /**
  *
  * @author leodz
+ * @author erikp
+ * @author belen
+ * @author carlos
+ * 
+ * @version 21/noviembre/2021 21:45 hrs
  */
 
-import apppasteleria.Administrador;
-import apppasteleria.Cliente;
-import apppasteleria.Empleado;
+import apppasteleria.modelo.Administrador;
+import apppasteleria.modelo.Cliente;
+import apppasteleria.modelo.Empleado;
 import java.util.ArrayList;
 
-/**
- *
- * @author leodz
- */
+
 public class ControladorPersona {
     
     ArrayList<Cliente> clientes = new ArrayList<>();
@@ -78,7 +80,14 @@ public class ControladorPersona {
         }
     }
     
-     
+     /**
+      * Método para agregar clientes
+     * @throw Lanza la excepción NumberFormatException para detectar si en el atributo de sweetpoint se ingresa algo que no sea un número.
+     * @param ID 
+     * @param nombre
+     * @param apellido
+     * @param sweetpoints
+      **/
     public void agregarCliente(String ID, String nombre, String apellido, Integer sweetpoints){
         try{
             if(!existeCliente(ID)){
@@ -87,8 +96,6 @@ public class ControladorPersona {
         }catch(NumberFormatException e){
             System.out.println("Datos ingresados en el campo 'sweetpoints' deben ser números.");
         }
-        
-        
     }
     
     public void agregarEmpleado(String ID, String nombre, String apellido){
