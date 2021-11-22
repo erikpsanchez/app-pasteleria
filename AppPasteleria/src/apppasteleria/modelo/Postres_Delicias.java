@@ -43,8 +43,8 @@ public class Postres_Delicias extends Producto{
  * Método que asigna un valor al atributo aniadidos
  * @param aniadidos
  */
-    public void setAnadidos(String anadidos) {
-        this.aniadidos = anadidos;
+    public void setAnadidos(String aniadidos) {
+        this.aniadidos = aniadidos;
     }
     
     /**

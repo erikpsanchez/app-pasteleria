@@ -82,12 +82,12 @@ public class ControladorPersona {
     
      /**
       * Método para agregar clientes
-     * @throw Lanza la excepción NumberFormatException para detectar si en el atributo de sweetpoint se ingresa algo que no sea un número.
+     * Lanza la excepción NumberFormatException para detectar si en el atributo de sweetpoint se ingresa algo que no sea un número.
      * @param ID 
      * @param nombre
      * @param apellido
      * @param sweetpoints
-      **/
+      */
     public void agregarCliente(String ID, String nombre, String apellido, Integer sweetpoints){
         try{
             if(!existeCliente(ID)){

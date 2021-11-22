@@ -31,7 +31,7 @@ public class Administrador extends Persona {
     
     /**
  * Método que asigna un valor al atributo password
- * @param password 
+ *@param password 
  */    
     public void setPassword(String password) {
         this.password = password;
