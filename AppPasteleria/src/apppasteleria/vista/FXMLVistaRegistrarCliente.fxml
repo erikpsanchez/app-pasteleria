@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apppasteleria.controlador.ControladorVistaRegistrarCliente">
+   <children>
+      <TableView fx:id="tablaClientes" layoutX="11.0" layoutY="14.0" onMouseClicked="#seleccionar" prefHeight="407.0" prefWidth="864.0">
+        <columns>
+            <TableColumn fx:id="colID" prefWidth="202.0" text="ID" />
+            <TableColumn fx:id="colNombre" minWidth="8.0" prefWidth="208.0" text="Nombre" />
+            <TableColumn fx:id="colApellido" prefWidth="222.0" text="Apellido" />
+            <TableColumn fx:id="colSweetpoints" prefWidth="231.0" text="Sweetpoints" />
+        </columns>
+      </TableView>
+      <Label fx:id="ID" layoutX="22.0" layoutY="445.0" text="ID" />
+      <TextField fx:id="textID" layoutX="57.0" layoutY="440.0" prefHeight="31.0" prefWidth="149.0" />
+      <TextField fx:id="textNombre" layoutX="330.0" layoutY="440.0" />
+      <Label fx:id="Nombre" layoutX="259.0" layoutY="445.0" text="Nombre" />
+      <TextField fx:id="textApellido" layoutX="627.0" layoutY="440.0" />
+      <Label fx:id="Apellido" layoutX="555.0" layoutY="445.0" text="Apellido" />
+      <Button fx:id="btnAgregar" layoutX="198.0" layoutY="500.0" mnemonicParsing="false" onAction="#agregar" prefHeight="31.0" prefWidth="116.0" text="Agregar" />
+      <Button fx:id="btnModificar" layoutX="386.0" layoutY="500.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="116.0" text="Modificar" />
+      <Button fx:id="btnEliminar" layoutX="583.0" layoutY="500.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
+   </children>
+</AnchorPane>
