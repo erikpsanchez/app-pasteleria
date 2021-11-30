@@ -98,7 +98,9 @@ public class ControladorVistaRegistrarCliente extends ControladorCliente impleme
             alert.setContentText("Debe seleccionar a un cliente");
             alert.showAndWait();
         }else{
-            this.clientesVista.remove(c);
+            eliminar(c.getID());
+            clientesVista.clear();
+            clientesVista.setAll(clientes);
             this.tablaClientes.refresh();
             
             textID.clear();
@@ -134,7 +136,6 @@ public class ControladorVistaRegistrarCliente extends ControladorCliente impleme
                 String apellidos = this.textApellido.getText();
                 Integer sweetpoints = 0;
                 
-                Cliente aux = new Cliente(ID, nombre, apellidos, sweetpoints); //Creación de un cliente auxiliar
                 
                 //Por si algún campo está vacío
                 if(this.textNombre.getText() == null || this.textNombre.getText().trim().isEmpty() || this.textApellido.getText() == null || this.textApellido.getText().trim().isEmpty()){
@@ -144,15 +145,16 @@ public class ControladorVistaRegistrarCliente extends ControladorCliente impleme
                     alert.setContentText("No puede haber campos vacíos");
                     alert.showAndWait();
                 }else{ //Los campos no están vacíos
-                    if(!this.clientesVista.contains(aux)){
-                        clientesVista.add(new Cliente(ID, nombre, apellidos, sweetpoints)); //Agrega a la lista
+                    if(!existe(ID)){
+                        agregar(ID, nombre, apellidos, sweetpoints); //Agrega a la lista
                         
                         //Limpieza de los campos
                         textID.clear();
                         textNombre.clear();
                         textApellido.clear();
                        
-                        
+                        clientesVista.clear();
+                        clientesVista.setAll(clientes);
                         this.tablaClientes.refresh(); //Refresco de la tabla
                         textID.setEditable(true); //Regresa a editable el ID
                         
@@ -165,14 +167,16 @@ public class ControladorVistaRegistrarCliente extends ControladorCliente impleme
                         
                     }else{
                         //Modificación de la persona
-                        c.setNombre(nombre);
-                        c.setApellido(apellidos);
+                        clientes.get(buscar(ID)).setNombre(nombre);
+                        clientes.get(buscar(ID)).setApellido(apellidos);
                     
                         //Limpieza de los campos
                         textID.clear();
                         textNombre.clear();
                         textApellido.clear();
                         
+                        clientesVista.clear();
+                        clientesVista.setAll(clientes);
                         this.tablaClientes.refresh(); //Refresco de la tabla
                         textID.setEditable(true); //Regresa a editable el ID
                         
@@ -204,11 +208,12 @@ public class ControladorVistaRegistrarCliente extends ControladorCliente impleme
                 alert.setContentText("No puede haber campos vacíos");
                 alert.showAndWait();
             }else{
-                //Creacion del cliente
-                Cliente c = new Cliente(ID, nombre, apellidos, sweetpoints);
 
-                if(!this.clientesVista.contains(c)){//Si el cliente no existe, lo busca por ID
-                    clientesVista.add(new Cliente(ID, nombre, apellidos, sweetpoints)); //Agrega a la lista
+                if(!existe(ID)){//Si el cliente no existe, lo busca por ID
+                    agregar(ID, nombre, apellidos, sweetpoints); //Agrega a la lista
+                    
+                    clientesVista.clear();
+                    clientesVista.setAll(clientes);
                     this.tablaClientes.setItems(clientesVista); //Los pone en la tabla
                     //Limpieza de los campos de textos
                     textID.clear();

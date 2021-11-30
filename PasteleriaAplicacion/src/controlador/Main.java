@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import static controlador.ControladorCliente.clientes;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -36,6 +37,10 @@ public class Main extends Application{
         }
     }
     
+    @Override
+    public void stop(){
+        System.out.println(clientes);
+    }
     
     public static void main(String[] args) {
         launch(args);

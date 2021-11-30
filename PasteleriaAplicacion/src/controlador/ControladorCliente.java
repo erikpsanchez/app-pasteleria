@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ControladorCliente {
     protected static ArrayList<Cliente> clientes = new ArrayList<>();
     
-    public int buscarCliente(String ID){
+    public int buscar(String ID){
         for(int i=0;i<clientes.size();i++){
             if(ID.equals(clientes.get(i).getID())){
                 return i;
@@ -24,8 +24,8 @@ public class ControladorCliente {
         return -1;
     }
     
-    public boolean existeCliente(String ID){
-        if(buscarCliente(ID) != -1){
+    public boolean existe(String ID){
+        if(buscar(ID) != -1){
             return true;
         }else{
             return false;
@@ -40,9 +40,9 @@ public class ControladorCliente {
      * @param apellido
      * @param sweetpoints
       */
-    public void agregarCliente(String ID, String nombre, String apellido, Integer sweetpoints){
+    public void agregar(String ID, String nombre, String apellido, Integer sweetpoints){
         try{
-            if(!existeCliente(ID)){
+            if(!existe(ID)){
                 clientes.add(new Cliente(ID, nombre, apellido, sweetpoints));
             }
         }catch(NumberFormatException e){
@@ -50,9 +50,9 @@ public class ControladorCliente {
         }
     }
     
-    public void eliminarCliente(String ID){
-        if(existeCliente(ID)){
-            clientes.remove(clientes.get(buscarCliente(ID)));
+    public void eliminar(String ID){
+        if(existe(ID)){
+            clientes.remove(clientes.get(buscar(ID)));
         }
     }
     
