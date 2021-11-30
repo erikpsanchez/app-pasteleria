@@ -59,23 +59,7 @@ public class Cliente extends Persona {
                 "; Sweetpoints: " + getSweetpoints();
     }
     
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Persona other = (Persona) obj;
-        if (!Objects.equals(this.ID, other.ID)) {
-            return false;
-        }
-        return true;
-    }
+    
     
 }
 

@@ -56,4 +56,20 @@ public class ControladorCliente {
         }
     }
     
+    public Integer convertirVentaASweetpoints(Double venta){
+        Integer sweetpoints = 0;
+        if(venta<50){
+            sweetpoints = 0;
+        }else if(venta>=50 && venta<75){
+            sweetpoints = 2;
+        }else if(venta>=75 && venta <150){
+            sweetpoints = 3;
+        }else if(venta>=150){
+            sweetpoints = 5;
+        }
+        
+        return sweetpoints;
+    }
+    
+    
 }
