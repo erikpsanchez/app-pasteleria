@@ -24,8 +24,8 @@ public class Main extends Application{
     public void start(Stage primaryStage){
         try{
             FXMLLoader loader = new FXMLLoader();
-            //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarCliente.fxml"));
-            loader.setLocation(Main.class.getResource("/vista/RegistrarPasteles.fxml"));
+            loader.setLocation(Main.class.getResource("/vista/VistaRegistrarCliente.fxml"));
+            //loader.setLocation(Main.class.getResource("/vista/RegistrarPasteles.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPostresDelicias.fxml"));
             Pane ventana = (Pane) loader.load();
             
