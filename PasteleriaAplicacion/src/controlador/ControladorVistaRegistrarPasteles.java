@@ -125,7 +125,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
         
             //Por si algún campo de texto está vacio
             if(this.txtPrecio.getText() == null || this.txtPrecio.getText().trim().isEmpty() || this.txtSabor.getText() == null || this.txtSabor.getText().trim().isEmpty() || this.txtID.getText() == null || this.txtID.getText().trim().isEmpty() || CmTamano.getSelectionModel().getSelectedItem() == null){
-                System.out.println("Esto si es de looooooooooooocos");
+               
                 
                 
                 Alert alert = new Alert(Alert.AlertType.ERROR);
