@@ -24,11 +24,10 @@ public class PostresDelicias extends Producto{
  * @param nombre
  * @param precio
  * @param cantidad
- * @param aniadidos
  */ 
-    public PostresDelicias(String ID, String tipo, String nombre, Double precio, Integer cantidad, String aniadidos){
+    public PostresDelicias(String ID, String tipo, String nombre, Double precio, Integer cantidad){
         super(ID, tipo, nombre, precio, cantidad);
-        this.aniadidos = aniadidos;
+       
     }
 
     /**
@@ -53,7 +52,7 @@ public class PostresDelicias extends Producto{
  */
     @Override
     public String toString() {
-        return "ID=" + ID + ", tipo=" + tipo + ", nombre=" + nombre + ", precio=" + precio + ", cantidad=" + cantidad + ", añadidos=" + aniadidos;
+        return "ID=" + ID + ", tipo=" + tipo + ", nombre=" + nombre + ", precio=" + precio + ", cantidad=" + cantidad ;
     }
     
 }

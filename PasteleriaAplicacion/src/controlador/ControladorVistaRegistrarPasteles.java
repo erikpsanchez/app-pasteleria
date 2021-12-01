@@ -138,7 +138,8 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
                     
                     
                 //Lectura de los campos de texto
-                String ID = this.txtID.getText();
+                Integer auxID =Integer.parseInt(this.txtID.getText());
+                String ID = String.valueOf(auxID);
                 String tipo = this.txtTipo.getText();
                 String nombre = this.txtNombre.getText();
                 Double precio = Double.parseDouble(this.txtPrecio.getText());
@@ -189,7 +190,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setHeaderText(null);
                     alert.setTitle("Inténtelo de nuevo");
-                    alert.setContentText("Campo Precio incorrecto, solo acepta numeros enteros");
+                    alert.setContentText("Verifique campos  ID y PRECIO ,solo acepta numeros enteros");
                     alert.showAndWait();
                 }
                 
@@ -223,12 +224,13 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Inténtelo de nuevo");
-            alert.setContentText("Debe seleccionar a un cliente");
+            alert.setContentText("Debe seleccionar a un Producto");
             alert.showAndWait();
         }else{
             try{
-            //Cuando ya se seleccionó a un cliente     
-               String ID = this.txtID.getText();
+            //Cuando ya se seleccionó a un cliente 
+                Integer auxID =Integer.parseInt(this.txtID.getText());
+                String ID = String.valueOf(auxID);
                 String tipo = this.txtTipo.getText();
                 String nombre = this.txtNombre.getText();
                 Double precio = Double.parseDouble(this.txtPrecio.getText());
@@ -277,7 +279,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setHeaderText(null);
                         alert.setTitle("Información");
-                        alert.setContentText("Cliente agregado");
+                        alert.setContentText("Producto agregado");
                         alert.showAndWait();
                         
                     }else{
@@ -321,7 +323,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setHeaderText(null);
                     alert.setTitle("Inténtelo de nuevo");
-                    alert.setContentText("Campo Precio incorrecto, solo acepta numeros enteros");
+                    alert.setContentText("Verifique campos  ID y PRECIO ,solo acepta numeros enteros");
                     alert.showAndWait();
             }
             
@@ -339,7 +341,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Inténtelo de nuevo");
-            alert.setContentText("Debe seleccionar a un cliente");
+            alert.setContentText("Debe seleccionar a un Producto");
             alert.showAndWait();
         }else{
             eliminar(c.getID());
@@ -366,7 +368,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
             alert.setTitle("Información");
-            alert.setContentText("Cliente eliminado");
+            alert.setContentText("Producto eliminado");
             alert.showAndWait();
         }
     }    
