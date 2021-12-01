@@ -25,6 +25,7 @@ public class Main extends Application{
         try{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/vista/VistaRegistrarCliente.fxml"));
+            //loader.setLocation(Main.class.getResource("/vista/RegistrarPasteles.fxml"));
             Pane ventana = (Pane) loader.load();
             
             Scene scene = new Scene(ventana);
