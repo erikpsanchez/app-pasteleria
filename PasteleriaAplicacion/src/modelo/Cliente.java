@@ -9,7 +9,10 @@ import java.util.Objects;
 
 /**
  *
- * @author leodz
+ * @author Maria Belen Couoh Chan
+ * @author Leandro Angel Dzib Nauat
+ * @author Erik Alejandro Poot Sánchez
+ * @author Carlos Fernando Sánchez Chuc
  */
 public class Cliente extends Persona {
     private Integer sweetpoints;
@@ -59,23 +62,7 @@ public class Cliente extends Persona {
                 "; Sweetpoints: " + getSweetpoints();
     }
     
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Persona other = (Persona) obj;
-        if (!Objects.equals(this.ID, other.ID)) {
-            return false;
-        }
-        return true;
-    }
+    
     
 }
 
