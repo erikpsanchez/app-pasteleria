@@ -10,11 +10,22 @@ import java.util.ArrayList;
 
 /**
  *
- * @author leodz
+ * @author Maria Belen Couoh Chan
+ * @author Leandro Angel Dzib Nauat
+ * @author Erik Alejandro Poot Sánchez
+ * @author Carlos Fernando Sánchez Chuc
  */
 public class ControladorCliente {
+    /**
+     * ArrayList donde guardar a los clientes
+     */
     protected static ArrayList<Cliente> clientes = new ArrayList<>();
     
+    /**
+     * Método para buscar un cliente en el Array por ID
+     * @param ID Identificador del cliente
+     * @return Entero con la localización del cliente en el Array
+     */
     public int buscar(String ID){
         for(int i=0;i<clientes.size();i++){
             if(ID.equals(clientes.get(i).getID())){
@@ -24,6 +35,11 @@ public class ControladorCliente {
         return -1;
     }
     
+    /**
+     * Método para saber si existe un cliente en el Array por ID
+     * @param ID Identificador del cliente
+     * @return boolean
+     */
     public boolean existe(String ID){
         if(buscar(ID) != -1){
             return true;
@@ -50,12 +66,21 @@ public class ControladorCliente {
         }
     }
     
+    /**
+     * Método para eliminar un cliente del Array por ID
+     * @param ID Identificador del cliente
+     */
     public void eliminar(String ID){
         if(existe(ID)){
             clientes.remove(clientes.get(buscar(ID)));
         }
     }
     
+    /**
+     * Método para convertir el valor de la venta en Sweetpoints
+     * @param venta Valor de la venta
+     * @return Sweetpoints
+     */
     public Integer convertirVentaASweetpoints(Double venta){
         Integer sweetpoints = 0;
         if(venta<50){

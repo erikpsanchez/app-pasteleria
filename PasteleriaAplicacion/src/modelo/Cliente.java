@@ -9,7 +9,10 @@ import java.util.Objects;
 
 /**
  *
- * @author leodz
+ * @author Maria Belen Couoh Chan
+ * @author Leandro Angel Dzib Nauat
+ * @author Erik Alejandro Poot Sánchez
+ * @author Carlos Fernando Sánchez Chuc
  */
 public class Cliente extends Persona {
     private Integer sweetpoints;
