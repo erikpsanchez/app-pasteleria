@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaRegistrarAdministrador">
+   <children>
+      <TableView fx:id="tablaAdministradores" layoutX="12.0" layoutY="14.0" onMouseClicked="#seleccionar" prefHeight="407.0" prefWidth="864.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="202.0" text="ID" />
+          <TableColumn fx:id="colNombre" minWidth="8.0" prefWidth="208.0" text="Nombre" />
+          <TableColumn fx:id="colApellido" prefWidth="222.0" text="Apellido" />
+          <TableColumn fx:id="colPassword" prefWidth="231.0" text="Password" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEliminar" layoutX="593.0" layoutY="501.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
+      <Button fx:id="btnModificar" layoutX="396.0" layoutY="501.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="116.0" text="Modificar" />
+      <Button fx:id="btnAgregar" layoutX="208.0" layoutY="501.0" mnemonicParsing="false" onAction="#agregar" prefHeight="31.0" prefWidth="116.0" text="Agregar" />
+      <Label fx:id="Apellido" layoutX="432.0" layoutY="445.0" text="Apellido" />
+      <TextField fx:id="textApellido" layoutX="486.0" layoutY="441.0" />
+      <Label fx:id="Nombre" layoutX="208.0" layoutY="445.0" text="Nombre" />
+      <TextField fx:id="textNombre" layoutX="259.0" layoutY="441.0" />
+      <TextField fx:id="textID" layoutX="34.0" layoutY="438.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label fx:id="ID" layoutX="14.0" layoutY="445.0" text="ID" />
+      <Label fx:id="Password" layoutX="668.0" layoutY="445.0" text="Password" />
+      <PasswordField fx:id="textPassword" layoutX="727.0" layoutY="441.0" />
+   </children>
+</AnchorPane>
