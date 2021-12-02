@@ -28,7 +28,7 @@ public class Main extends Application{
         try{
             FXMLLoader loader = new FXMLLoader();
 
-            loader.setLocation(Main.class.getResource("/vista/VistaRegistrarCliente.fxml"));
+            loader.setLocation(Main.class.getResource("/vista/RegistrarPostresDelicias.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPasteles.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPostresDelicias.fxml"));
 
