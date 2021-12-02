@@ -22,9 +22,9 @@
             <TableColumn fx:id="colSabor" prefWidth="165.0" text="SABOR" />
         </columns>
       </TableView>
-      <Button fx:id="btnEditarPas" layoutX="580.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="116.0" text="Editar" />
-      <Button fx:id="btnAgregarPas" layoutX="419.0" layoutY="493.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="31.0" prefWidth="116.0" text="Agregar" />
-      <Button fx:id="btnEliminarPas" layoutX="739.0" layoutY="493.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
+      <Button fx:id="btnEditarPas" layoutX="535.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="116.0" text="Editar" />
+      <Button fx:id="btnAgregarPas" layoutX="405.0" layoutY="493.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="31.0" prefWidth="116.0" text="Agregar" />
+      <Button fx:id="btnEliminarPas" layoutX="668.0" layoutY="493.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
       <Label layoutX="20.0" layoutY="442.0" prefHeight="17.0" prefWidth="18.0" text="ID " />
       <Label fx:id="lbTipo" layoutX="23.0" layoutY="474.0" prefHeight="17.0" prefWidth="30.0" text="TIPO" />
       <Label fx:id="lbNombre" layoutX="26.0" layoutY="508.0" text="NOMBRE" />
@@ -42,5 +42,6 @@
       <Label fx:id="lbInventario" layoutX="275.0" layoutY="474.0" text="TOTAL  INVENTARIO " />
       <Label fx:id="lbTotal" layoutX="284.0" layoutY="500.0" prefHeight="31.0" prefWidth="95.0" text="    " />
       <Label layoutX="275.0" layoutY="503.0" prefHeight="25.0" prefWidth="10.0" text="\$" />
+      <Button fx:id="btnMenu" layoutX="803.0" layoutY="493.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="31.0" prefWidth="71.0" text="Menú" />
    </children>
 </AnchorPane>

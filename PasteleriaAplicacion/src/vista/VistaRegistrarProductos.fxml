@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaRegistrarProductos">
+   <children>
+      <Button fx:id="btnRegistrarPasteles" layoutX="201.0" layoutY="234.0" mnemonicParsing="false" onAction="#irARegistrarPasteles" prefHeight="72.0" prefWidth="185.0" text="Pasteles" />
+      <Button fx:id="btnRegistrarPostresDelicias" layoutX="507.0" layoutY="234.0" mnemonicParsing="false" onAction="#irARegistrarPostresDelicias" prefHeight="72.0" prefWidth="185.0" text="Postres y Delicias" />
+      <Button fx:id="btnMenu" layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="27.0" prefWidth="113.0" text="Menú" />
+   </children>
+</AnchorPane>

@@ -6,13 +6,16 @@
 package controlador;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,6 +26,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import modelo.PostresDelicias;
 
 /**
@@ -74,7 +79,9 @@ public class ControladorVistaRegistrarPostresDelicias extends ControladorPostres
     private Label lbInventariop;
     @FXML
     private Label lbTotalp;
-
+    @FXML
+    private Button btnMenu;
+    
     protected ObservableList<PostresDelicias> Ldelicias;
     /**
      * Initializes the controller class.
@@ -345,19 +352,32 @@ public class ControladorVistaRegistrarPostresDelicias extends ControladorPostres
             alert.setContentText("Producto eliminado");
             alert.showAndWait();
         }
+        
+        
     }    
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public void cerrarVentana() {
+        try{
+            FXMLLoader loader = new FXMLLoader();
+
+            loader.setLocation(Main.class.getResource("/vista/VistaMenu.fxml"));
+            
+            ControladorVistaMenu controlador = loader.getController();
+            
+            Pane ventana = (Pane) loader.load();
+
+            Scene scene = new Scene(ventana);
+            Stage stage = new Stage();
+            
+            stage.setTitle("Menu");
+            stage.setScene(scene);
+            stage.show();
+            
+            Stage myStage = (Stage) this.btnMenu.getScene().getWindow();
+            myStage.close();
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+      
 }
