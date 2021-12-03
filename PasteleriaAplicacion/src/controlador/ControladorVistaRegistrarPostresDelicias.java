@@ -82,7 +82,7 @@ public class ControladorVistaRegistrarPostresDelicias extends ControladorPostres
     @FXML
     private Button btnMenu;
     
-    protected ObservableList<PostresDelicias> Ldelicias;
+    protected ObservableList<PostresDelicias> Ldelicias = FXCollections.observableArrayList(listDelicias);
     /**
      * Initializes the controller class.
      */
@@ -90,7 +90,7 @@ public class ControladorVistaRegistrarPostresDelicias extends ControladorPostres
     public void initialize(URL url, ResourceBundle rb) {
        
        
-       Ldelicias = FXCollections.observableArrayList(listDelicias);
+       
       
        this.colIDP.setCellValueFactory(new PropertyValueFactory("ID"));
        this.colTipoP.setCellValueFactory(new PropertyValueFactory("tipo"));
@@ -102,7 +102,8 @@ public class ControladorVistaRegistrarPostresDelicias extends ControladorPostres
        numeros.setValue(1);
        SpCantidadP.setValueFactory(numeros);
        
-         
+       Ldelicias.setAll(listDelicias);
+        this.tbPDelicias.setItems(Ldelicias);
     }    
     
     @FXML

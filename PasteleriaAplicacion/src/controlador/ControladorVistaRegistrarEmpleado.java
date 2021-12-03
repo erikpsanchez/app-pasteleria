@@ -65,18 +65,21 @@ public class ControladorVistaRegistrarEmpleado extends ControladorEmpleado imple
     @FXML
     private Button btnMenu;
     
-    protected ObservableList<Empleado> empleadosVista; 
+    protected ObservableList<Empleado> empleadosVista = FXCollections.observableArrayList(empleados);
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        empleadosVista = FXCollections.observableArrayList(empleados);
+        
         
         this.colID.setCellValueFactory(new PropertyValueFactory("ID"));
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
+        
+        empleadosVista.setAll(empleados);
+        this.tablaEmpleados.setItems(empleadosVista);
     }  
     
     /**
