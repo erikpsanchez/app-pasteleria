@@ -101,6 +101,7 @@ public class ControladorVistaRegistrarPostresDelicias extends ControladorPostres
       SpinnerValueFactory<Integer> numeros = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
        numeros.setValue(1);
        SpCantidadP.setValueFactory(numeros);
+       
          
     }    
     

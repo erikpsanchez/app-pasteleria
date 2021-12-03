@@ -13,7 +13,7 @@ import modelo.PostresDelicias;
  * @author carlo
  */
 public class ControladorPostresDelicias {
-     protected static ArrayList<PostresDelicias> listDelicias = new ArrayList<>();
+     public static ArrayList<PostresDelicias> listDelicias = new ArrayList<>();
     
     public int buscar(String ID){
         for(int i=0;i<listDelicias.size();i++){

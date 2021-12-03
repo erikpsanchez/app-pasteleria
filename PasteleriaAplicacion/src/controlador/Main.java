@@ -5,7 +5,12 @@
  */
 package controlador;
 
+import static controlador.ControladorAdministrador.administradores;
 import static controlador.ControladorCliente.clientes;
+import static controlador.ControladorEmpleado.empleados;
+import static controlador.ControladorPasteles.listPasteles;
+import static controlador.ControladorPostresDelicias.listDelicias;
+import static controlador.ControladorVenta.ventas;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -28,13 +33,19 @@ public class Main extends Application{
         try{
             FXMLLoader loader = new FXMLLoader();
 
+
             //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarCliente.fxml"));
+
+            //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarCliente.fxml"));
+
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPasteles.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPostresDelicias.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarAdministrador.fxml"));
+            //loader.setLocation(Main.class.getResource("/vista/VistaVender.fxml"));
+
             //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarEmpleado.fxml"));
-            loader.setLocation(Main.class.getResource("/vista/VistaMenu.fxml"));
-            
+           loader.setLocation(Main.class.getResource("/vista/VistaMenu.fxml"));
+
             Pane ventana = (Pane) loader.load();
             
             Scene scene = new Scene(ventana);
@@ -50,6 +61,11 @@ public class Main extends Application{
     @Override
     public void stop(){
         System.out.println(clientes);
+        System.out.println(administradores);
+        System.out.println(empleados);
+        System.out.println(listPasteles);
+        System.out.println(listDelicias);
+        System.out.println(ventas);
     }
     
     public static void main(String[] args) {

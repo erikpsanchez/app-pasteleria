@@ -16,7 +16,7 @@ import modelo.Administrador;
  * @author Carlos Fernando Sánchez Chuc
  */
 public class ControladorAdministrador {
-    protected static ArrayList<Administrador> administradores = new ArrayList<>();
+    public static ArrayList<Administrador> administradores = new ArrayList<>();
     
     public int buscar(String ID){
         for(int i=0; i<administradores.size(); i++){

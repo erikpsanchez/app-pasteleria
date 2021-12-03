@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaMenu">
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaMenu">
    <children>
       <Button fx:id="btnHistorialVenta" layoutX="537.0" layoutY="234.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="185.0" text="Historial de Venta" />
-      <Button fx:id="btnRealizarVenta" layoutX="226.0" layoutY="234.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="185.0" text="Realizar Venta" />
+      <Button fx:id="btnRealizarVenta" layoutX="226.0" layoutY="234.0" mnemonicParsing="false" onAction="#irARealizarVenta" prefHeight="72.0" prefWidth="185.0" text="Realizar Venta" />
       <Button fx:id="btnRegistrarPersonas" layoutX="226.0" layoutY="346.0" mnemonicParsing="false" onAction="#irARegistrarPersonas" prefHeight="72.0" prefWidth="185.0" text="Registro de Personas" />
       <Button fx:id="btnRegistrarProductos" layoutX="537.0" layoutY="346.0" mnemonicParsing="false" onAction="#irARegistrarProductos" prefHeight="72.0" prefWidth="185.0" text="Registro de Productos" />
    </children>

@@ -99,4 +99,29 @@ public class ControladorVistaMenu {
             System.out.println(e.getMessage());
         }
     }
+
+    @FXML
+    private void irARealizarVenta(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader();
+
+            loader.setLocation(Main.class.getResource("/vista/VistaVender.fxml"));
+            
+            ControladorVistaVender controlador = loader.getController();
+            
+            Pane ventana = (Pane) loader.load();
+
+            Scene scene = new Scene(ventana);
+            Stage stage = new Stage();
+            
+            stage.setTitle("Venta");
+            stage.setScene(scene);
+            stage.show();
+            stage.setOnCloseRequest(e -> controlador.cerrarVentana());
+            Stage myStage = (Stage) this.btnRealizarVenta.getScene().getWindow();
+            myStage.close();
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
