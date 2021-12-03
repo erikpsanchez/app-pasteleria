@@ -373,12 +373,12 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
                 }
                 
                 //Quita todo en la vista y limpiar
-               /* ventaTemporal.clear();
+               ventaTemporal.clear();
                 ventasVista.clear();
                 this.tablaVenta.refresh();
                 this.textID.clear();
                 this.textCantidad.clear();
-                this.importe.setVisible(false);
+                /* this.importe.setVisible(false);
                 this.descuento.setVisible(false);*/
                 
                 //Actualizar las listas de producto
