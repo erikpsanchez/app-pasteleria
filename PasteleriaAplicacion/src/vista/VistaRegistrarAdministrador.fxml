@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaRegistrarAdministrador">
+<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaRegistrarAdministrador">
    <children>
       <TableView fx:id="tablaAdministradores" layoutX="11.0" layoutY="9.0" onMouseClicked="#seleccionar" prefHeight="396.0" prefWidth="868.0">
          <columns>
@@ -27,5 +29,6 @@
       <Button fx:id="btnModificar" layoutX="374.0" layoutY="497.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="143.0" text="Modificar" />
       <Button fx:id="btnAgregar" layoutX="187.0" layoutY="497.0" mnemonicParsing="false" onAction="#agregar" prefHeight="31.0" prefWidth="143.0" text="Agregar" />
       <Button fx:id="btnEliminar" layoutX="566.0" layoutY="497.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="31.0" prefWidth="143.0" text="Eliminar" />
+      <Button fx:id="btnMenu" layoutX="34.0" layoutY="500.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="31.0" prefWidth="87.0" text="Menu" />
    </children>
 </AnchorPane>

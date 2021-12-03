@@ -26,5 +26,6 @@
       <TextField fx:id="textNombre" layoutX="340.0" layoutY="441.0" />
       <TextField fx:id="textID" layoutX="67.0" layoutY="441.0" prefHeight="31.0" prefWidth="149.0" />
       <Label fx:id="ID" layoutX="32.0" layoutY="446.0" text="ID" />
+      <Button fx:id="btnMenu" layoutX="34.0" layoutY="500.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="31.0" prefWidth="87.0" text="Menu" />
    </children>
 </AnchorPane>

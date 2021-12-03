@@ -41,7 +41,10 @@ public class Main extends Application{
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPasteles.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/RegistrarPostresDelicias.fxml"));
             //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarAdministrador.fxml"));
-            loader.setLocation(Main.class.getResource("/vista/VistaVender.fxml"));
+            //loader.setLocation(Main.class.getResource("/vista/VistaVender.fxml"));
+
+            //loader.setLocation(Main.class.getResource("/vista/VistaRegistrarEmpleado.fxml"));
+           loader.setLocation(Main.class.getResource("/vista/VistaMenu.fxml"));
 
             Pane ventana = (Pane) loader.load();
             

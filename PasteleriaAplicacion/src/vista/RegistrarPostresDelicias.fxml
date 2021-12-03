@@ -8,8 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controlador.ControladorVistaRegistrarPostresDelicias">
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaRegistrarPostresDelicias">
    <children>
       <TableView fx:id="tbPDelicias" layoutX="11.0" layoutY="14.0" onMouseClicked="#seleccionarP" prefHeight="407.0" prefWidth="864.0">
         <columns>
@@ -20,9 +19,9 @@
             <TableColumn fx:id="colCantidadP" prefWidth="151.0" text="CANTIDAD" />
         </columns>
       </TableView>
-      <Button fx:id="btnAgregarPos" layoutX="419.0" layoutY="493.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="31.0" prefWidth="116.0" text="Aceptar" />
-      <Button fx:id="btnEditarPos" layoutX="580.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificarP" prefHeight="31.0" prefWidth="116.0" text="Editar" />
-      <Button fx:id="btnEliminarPos" layoutX="739.0" layoutY="493.0" mnemonicParsing="false" onAction="#eliminarP" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
+      <Button fx:id="btnAgregarPos" layoutX="386.0" layoutY="493.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="31.0" prefWidth="116.0" text="Aceptar" />
+      <Button fx:id="btnEditarPos" layoutX="525.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificarP" prefHeight="31.0" prefWidth="116.0" text="Editar" />
+      <Button fx:id="btnEliminarPos" layoutX="659.0" layoutY="494.0" mnemonicParsing="false" onAction="#eliminarP" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
       <TextField fx:id="txtTipop" layoutX="247.0" layoutY="447.0" prefHeight="25.0" prefWidth="116.0" />
       <TextField fx:id="txtIDp" layoutX="55.0" layoutY="447.0" prefHeight="25.0" prefWidth="116.0" />
       <TextField fx:id="txtNombrep" layoutX="451.0" layoutY="447.0" prefHeight="25.0" prefWidth="116.0" />
@@ -36,5 +35,6 @@
       <Label fx:id="lbInventariop" layoutX="140.0" layoutY="481.0" text="TOTAL INVENTARIO" />
       <Label layoutX="133.0" layoutY="514.0" text="\$" />
       <Label fx:id="lbTotalp" layoutX="151.0" layoutY="507.0" prefHeight="31.0" prefWidth="95.0" />
+      <Button fx:id="btnMenu" layoutX="800.0" layoutY="494.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="31.0" prefWidth="70.0" text="Menú" />
    </children>
 </AnchorPane>
