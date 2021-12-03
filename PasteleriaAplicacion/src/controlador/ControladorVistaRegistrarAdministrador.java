@@ -73,19 +73,22 @@ public class ControladorVistaRegistrarAdministrador extends ControladorAdministr
     @FXML
     private Button btnMenu;
     
-    protected ObservableList<Administrador> administradoresVista;
+    protected ObservableList<Administrador> administradoresVista = FXCollections.observableArrayList(administradores);
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        administradoresVista = FXCollections.observableArrayList(administradores);
+        
         
         this.colID.setCellValueFactory(new PropertyValueFactory("ID"));
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.colPassword.setCellValueFactory(new PropertyValueFactory("password"));
+        
+        administradoresVista.setAll(administradores);
+        this.tablaAdministradores.setItems(administradoresVista);
     }    
 
     @FXML

@@ -68,19 +68,22 @@ public class ControladorVistaRegistrarCliente extends ControladorCliente impleme
     @FXML
     private Button btnMenu;
     
-    protected ObservableList<Cliente> clientesVista; 
+    protected ObservableList<Cliente> clientesVista = FXCollections.observableArrayList(clientes);
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        clientesVista = FXCollections.observableArrayList(clientes);
+        
         
         this.colID.setCellValueFactory(new PropertyValueFactory("ID"));
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.colSweetpoints.setCellValueFactory(new PropertyValueFactory("sweetpoints"));
+        
+        clientesVista.setAll(clientes);
+        this.tablaClientes.setItems(clientesVista);
     }    
 
     /**

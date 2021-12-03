@@ -176,7 +176,7 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
                             agregarVentaTemporal(clientes.get(x.buscar(ID)).getID(), p.getID(),p.getTipo() + " " + p.getNombre() + " " + p.getSabor() + " " + p.getTamano(), cantidad, p.getPrecio());
                             ventasVista.clear();
                             ventasVista.setAll(ventaTemporal);
-                            this.tablaVenta.refresh(); //Refresco de la tabla
+                            this.tablaVenta.setItems(ventasVista); //Refresco de la tabla
                         }else{//no existe cliente
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setHeaderText(null);
@@ -233,7 +233,7 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
                             agregarVentaTemporal(clientes.get(x.buscar(ID)).getID(), p.getID(), p.getTipo() + " " + p.getNombre(), cantidad, p.getPrecio());
                             ventasVista.clear();
                             ventasVista.setAll(ventaTemporal);
-                            this.tablaVenta.refresh(); //Refresco de la tabla
+                            this.tablaVenta.setItems(ventasVista); //Refresco de la tabla
                         }else{//no existe cliente
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setHeaderText(null);
@@ -323,8 +323,8 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
                         newCantidad = listPasteles.get(pastel.buscar(ventaTemporal.get(i).getIdProducto())).getCantidad() - ventaTemporal.get(i).getCantidad();
                         listPasteles.get(pastel.buscar(ventaTemporal.get(i).getIdProducto())).setCantidad(newCantidad);
                     }else if(postre.existe(ventaTemporal.get(i).getIdProducto())){//si es Postre y Delicia
-                        newCantidad = listDelicias.get(pastel.buscar(ventaTemporal.get(i).getIdProducto())).getCantidad() - ventaTemporal.get(i).getCantidad();
-                        listDelicias.get(pastel.buscar(ventaTemporal.get(i).getIdProducto())).setCantidad(newCantidad);
+                        newCantidad = listDelicias.get(postre.buscar(ventaTemporal.get(i).getIdProducto())).getCantidad() - ventaTemporal.get(i).getCantidad();
+                        listDelicias.get(postre.buscar(ventaTemporal.get(i).getIdProducto())).setCantidad(newCantidad);
                     }    
                 }
                 //Checar descuento
@@ -373,13 +373,21 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
                 }
                 
                 //Quita todo en la vista y limpiar
-                ventaTemporal.clear();
+               /* ventaTemporal.clear();
                 ventasVista.clear();
                 this.tablaVenta.refresh();
                 this.textID.clear();
                 this.textCantidad.clear();
                 this.importe.setVisible(false);
-                this.descuento.setVisible(false);
+                this.descuento.setVisible(false);*/
+                
+                //Actualizar las listas de producto
+                pastelesVistaVenta.clear();
+                pastelesVistaVenta.setAll(listPasteles);
+                this.tablaPasteles.setItems(pastelesVistaVenta);
+                postresVistaVenta.clear();
+                postresVistaVenta.setAll(listDelicias);
+                this.tablaPostresDelicias.setItems(postresVistaVenta);
                 
             }else{//no existe cliente
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -396,7 +404,7 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
     private void cancelarVenta(ActionEvent event) {
         ventaTemporal.clear();
         ventasVista.clear();
-        this.tablaVenta.refresh();
+        this.tablaVenta.setItems(ventasVista);
     }
     
     

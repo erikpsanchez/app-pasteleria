@@ -63,6 +63,11 @@ public class Venta {
     public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
+
+    @Override
+    public String toString() {
+        return "cliente=" + this.cliente + ", idProducto=" + this.idProducto + ", producto=" + this.producto + ", cantidad=" + this.cantidad + ", precio=" + this.precio;
+    }
     
     
     

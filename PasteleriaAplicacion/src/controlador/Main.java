@@ -10,6 +10,7 @@ import static controlador.ControladorCliente.clientes;
 import static controlador.ControladorEmpleado.empleados;
 import static controlador.ControladorPasteles.listPasteles;
 import static controlador.ControladorPostresDelicias.listDelicias;
+import static controlador.ControladorVenta.ventaTemporal;
 import static controlador.ControladorVenta.ventas;
 import java.io.IOException;
 import javafx.application.Application;
@@ -27,6 +28,25 @@ import javafx.stage.Stage;
  * @author Carlos Fernando Sánchez Chuc
  */
 public class Main extends Application{
+    
+    @Override
+    public void init(){
+       /* ControladorAdministrador a = new ControladorAdministrador();
+        ControladorCliente b = new ControladorCliente();
+        ControladorEmpleado c = new ControladorEmpleado();
+        ControladorPasteles d = new ControladorPasteles();
+        ControladorPostresDelicias e = new ControladorPostresDelicias();
+        ControladorVenta f = new ControladorVenta();
+        ControladorVistaMenu g = new ControladorVistaMenu();
+        ControladorVistaRegistrarAdministrador h = new ControladorVistaRegistrarAdministrador();
+        ControladorVistaRegistrarCliente i = new ControladorVistaRegistrarCliente();
+        ControladorVistaRegistrarEmpleado j = new ControladorVistaRegistrarEmpleado();
+        ControladorVistaRegistrarPasteles k = new ControladorVistaRegistrarPasteles();
+        ControladorVistaRegistrarPersonas l = new ControladorVistaRegistrarPersonas();
+        ControladorVistaRegistrarPostresDelicias m = new ControladorVistaRegistrarPostresDelicias();
+        ControladorVistaRegistrarProductos n = new ControladorVistaRegistrarProductos();
+        ControladorVistaVender o = new ControladorVistaVender(); */
+    }
 
     @Override
     public void start(Stage primaryStage){
@@ -66,6 +86,8 @@ public class Main extends Application{
         System.out.println(listPasteles);
         System.out.println(listDelicias);
         System.out.println(ventas);
+        System.out.println(ventaTemporal);
+
     }
     
     public static void main(String[] args) {

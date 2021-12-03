@@ -99,7 +99,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
     private Button btnMenu;
     
     
-    public ObservableList<Pasteles> Lpasteles ;
+    public ObservableList<Pasteles> Lpasteles = FXCollections.observableArrayList(listPasteles);
     
     
     
@@ -112,7 +112,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
         // TODO
        ObservableList<String> tamano = FXCollections.observableArrayList("Chico","Mediano","Grande");
        CmTamano.setItems(tamano);
-       Lpasteles = FXCollections.observableArrayList(listPasteles);
+       
       
        this.colID.setCellValueFactory(new PropertyValueFactory("ID"));
        this.colTipo.setCellValueFactory(new PropertyValueFactory("tipo"));
@@ -126,7 +126,8 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
        valores.setValue(1);
        SpCantidad.setValueFactory(valores);
        
-       
+       Lpasteles.setAll(listPasteles);
+        this.tbPPasteles.setItems(Lpasteles);
     }   
     
     @FXML
