@@ -22,7 +22,7 @@
       <Button fx:id="btnCancelarVenta" layoutX="903.0" layoutY="149.0" mnemonicParsing="false" onAction="#cancelarVenta" prefHeight="46.0" prefWidth="215.0" text="Cancelar venta" />
       <Button fx:id="btnVenta" layoutX="625.0" layoutY="149.0" mnemonicParsing="false" onAction="#realizarVenta" prefHeight="46.0" prefWidth="220.0" text="Realizar venta" />
       <Button fx:id="btnCorteCaja" layoutX="893.0" layoutY="21.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="373.0" text="Corte de caja" />
-      <Button layoutX="31.0" layoutY="14.0" mnemonicParsing="false" text="Regresar al menú " />
+      <Button fx:id="btnMenu" layoutX="31.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrarVentana" text="Menú " />
       <Label layoutX="621.0" layoutY="312.0" text="Cantidad del producto" />
       <TextField fx:id="textCantidad" layoutX="794.0" layoutY="307.0" prefHeight="31.0" prefWidth="180.0" />
       <TableView fx:id="tablaPasteles" layoutX="31.0" layoutY="404.0" onMouseClicked="#seleccionarPastel" prefHeight="200.0" prefWidth="664.0">

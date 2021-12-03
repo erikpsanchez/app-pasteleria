@@ -21,11 +21,16 @@ import modelo.PostresDelicias;
 import static controlador.ControladorPasteles.listPasteles;
 import static controlador.ControladorPostresDelicias.listDelicias;
 import static controlador.ControladorVenta.ventaTemporal;
+import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import modelo.Producto;
 import modelo.Venta;
 
@@ -92,6 +97,8 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
     private Button btnAgregarPostre;
     @FXML
     private Button btnEliminarProducto;
+    @FXML
+    private Button btnMenu;
 
     /**
      * Initializes the controller class.
@@ -153,45 +160,55 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
         Pasteles p = this.tablaPasteles.getSelectionModel().getSelectedItem();
         ControladorCliente x = new ControladorCliente();
         
-        if(this.textCantidad.getText() == null || this.textCantidad.getText().trim().isEmpty() || this.textID.getText() == null || this.textID.getText().trim().isEmpty()){//campo Cantidad o ID está vacío
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setTitle("Inténtelo de nuevo");
-            alert.setContentText("Es necesario llenar el campo de cantidad o ID del cliente");
-            alert.showAndWait();
-        }else{//cantidad no está vacío
-            try{
-                Integer cantidad = Integer.parseInt(this.textCantidad.getText());
-                if(cantidad <= p.getCantidad()){//existen suficientes en inventario
-                    String ID = this.textID.getText();
-                    if(x.existe(ID)){//sí existe cliente
-                        agregarVentaTemporal(clientes.get(x.buscar(ID)).getID(), p.getID(),p.getTipo() + " " + p.getNombre() + " " + p.getSabor() + " " + p.getTamano(), cantidad, p.getPrecio());
-                        ventasVista.clear();
-                        ventasVista.setAll(ventaTemporal);
-                        this.tablaVenta.refresh(); //Refresco de la tabla
-                    }else{//no existe cliente
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
+        if(p != null){
+            if(this.textCantidad.getText() == null || this.textCantidad.getText().trim().isEmpty() || this.textID.getText() == null || this.textID.getText().trim().isEmpty()){//campo Cantidad o ID está vacío
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Inténtelo de nuevo");
+                alert.setContentText("Es necesario llenar el campo de cantidad o ID del cliente");
+                alert.showAndWait();
+            }else{//cantidad no está vacío
+                try{
+                    Integer cantidad = Integer.parseInt(this.textCantidad.getText());
+                    if(cantidad <= p.getCantidad()){//existen suficientes en inventario
+                        String ID = this.textID.getText();
+                        if(x.existe(ID)){//sí existe cliente
+                            agregarVentaTemporal(clientes.get(x.buscar(ID)).getID(), p.getID(),p.getTipo() + " " + p.getNombre() + " " + p.getSabor() + " " + p.getTamano(), cantidad, p.getPrecio());
+                            ventasVista.clear();
+                            ventasVista.setAll(ventaTemporal);
+                            this.tablaVenta.refresh(); //Refresco de la tabla
+                        }else{//no existe cliente
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setTitle("Inténtelo de nuevo");
+                            alert.setContentText("El cliente no existe");
+                            alert.showAndWait();
+                        }
+                    }else{//no existen suficientes en inventario
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setHeaderText(null);
                         alert.setTitle("Inténtelo de nuevo");
-                        alert.setContentText("El cliente no existe");
+                        alert.setContentText("No tiene inventario suficiente de ese producto");
                         alert.showAndWait();
                     }
-                }else{//no existen suficientes en inventario
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText(null);
-                    alert.setTitle("Inténtelo de nuevo");
-                    alert.setContentText("No tiene inventario suficiente de ese producto");
-                    alert.showAndWait();
-                }
-                    
-            }catch(NumberFormatException e){ //Por si ingresamos algo que no sea un número en cantidad o está vacío
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setHeaderText(null);
-                    alert.setTitle("Error");
-                    alert.setContentText("Ingrese un número en cantidad");
-                    alert.showAndWait();
-            } 
+
+                }catch(NumberFormatException e){ //Por si ingresamos algo que no sea un número en cantidad o está vacío
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setHeaderText(null);
+                        alert.setTitle("Error");
+                        alert.setContentText("Ingrese un número en cantidad");
+                        alert.showAndWait();
+                } 
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Información");
+            alert.setContentText("Debe seleccionar un pastel");
+            alert.showAndWait();
         }
+        
+        
         
     }
 
@@ -200,45 +217,54 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
         PostresDelicias p = this.tablaPostresDelicias.getSelectionModel().getSelectedItem();
         ControladorCliente x = new ControladorCliente();
         
-        if(this.textCantidad.getText() == null || this.textCantidad.getText().trim().isEmpty() || this.textID.getText() == null || this.textID.getText().trim().isEmpty()){//campo Cantidad o ID está vacío
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setTitle("Inténtelo de nuevo");
-            alert.setContentText("Es necesario llenar el campo de cantidad o ID del cliente");
-            alert.showAndWait();
-        }else{//cantidad no está vacío
-            try{
-                Integer cantidad = Integer.parseInt(this.textCantidad.getText());
-                if(cantidad <= p.getCantidad()){//existen suficientes en inventario
-                    String ID = this.textID.getText();
-                    if(x.existe(ID)){//sí existe cliente
-                        agregarVentaTemporal(clientes.get(x.buscar(ID)).getID(), p.getID(), p.getTipo() + " " + p.getNombre(), cantidad, p.getPrecio());
-                        ventasVista.clear();
-                        ventasVista.setAll(ventaTemporal);
-                        this.tablaVenta.refresh(); //Refresco de la tabla
-                    }else{//no existe cliente
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
+        if(p != null){
+            if(this.textCantidad.getText() == null || this.textCantidad.getText().trim().isEmpty() || this.textID.getText() == null || this.textID.getText().trim().isEmpty()){//campo Cantidad o ID está vacío
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Inténtelo de nuevo");
+                alert.setContentText("Es necesario llenar el campo de cantidad o ID del cliente");
+                alert.showAndWait();
+            }else{//cantidad no está vacío
+                try{
+                    Integer cantidad = Integer.parseInt(this.textCantidad.getText());
+                    if(cantidad <= p.getCantidad()){//existen suficientes en inventario
+                        String ID = this.textID.getText();
+                        if(x.existe(ID)){//sí existe cliente
+                            agregarVentaTemporal(clientes.get(x.buscar(ID)).getID(), p.getID(), p.getTipo() + " " + p.getNombre(), cantidad, p.getPrecio());
+                            ventasVista.clear();
+                            ventasVista.setAll(ventaTemporal);
+                            this.tablaVenta.refresh(); //Refresco de la tabla
+                        }else{//no existe cliente
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setTitle("Inténtelo de nuevo");
+                            alert.setContentText("El cliente no existe");
+                            alert.showAndWait();
+                        }
+                    }else{//no existen suficientes en inventario
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setHeaderText(null);
                         alert.setTitle("Inténtelo de nuevo");
-                        alert.setContentText("El cliente no existe");
+                        alert.setContentText("No tiene inventario suficiente de ese producto");
                         alert.showAndWait();
                     }
-                }else{//no existen suficientes en inventario
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText(null);
-                    alert.setTitle("Inténtelo de nuevo");
-                    alert.setContentText("No tiene inventario suficiente de ese producto");
-                    alert.showAndWait();
-                }
-                    
-            }catch(NumberFormatException e){ //Por si ingresamos algo que no sea un número en cantidad o está vacío
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setHeaderText(null);
-                    alert.setTitle("Error");
-                    alert.setContentText("Ingrese un número en cantidad");
-                    alert.showAndWait();
-            } 
+
+                }catch(NumberFormatException e){ //Por si ingresamos algo que no sea un número en cantidad o está vacío
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setHeaderText(null);
+                        alert.setTitle("Error");
+                        alert.setContentText("Ingrese un número en cantidad");
+                        alert.showAndWait();
+                } 
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Información");
+            alert.setContentText("Debe seleccionar un pastel");
+            alert.showAndWait();
         }
+        
     }
 
     @FXML
@@ -372,5 +398,32 @@ public class ControladorVistaVender extends ControladorVenta implements Initiali
         ventasVista.clear();
         this.tablaVenta.refresh();
     }
+    
+    
+    public void cerrarVentana() {
+        try{
+            FXMLLoader loader = new FXMLLoader();
+
+            loader.setLocation(Main.class.getResource("/vista/VistaMenu.fxml"));
+            
+            ControladorVistaMenu controlador = loader.getController();
+            
+            Pane ventana = (Pane) loader.load();
+
+            Scene scene = new Scene(ventana);
+            Stage stage = new Stage();
+            
+            stage.setTitle("Menu");
+            stage.setScene(scene);
+            stage.show();
+            
+            Stage myStage = (Stage) this.btnMenu.getScene().getWindow();
+            myStage.close();
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    
     
 }
