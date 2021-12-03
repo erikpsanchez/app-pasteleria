@@ -91,7 +91,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
     private Label lbTotal;
     
     
-    protected ObservableList<Pasteles> Lpasteles ;
+    public ObservableList<Pasteles> Lpasteles ;
     
     
     
@@ -117,6 +117,7 @@ public class ControladorVistaRegistrarPasteles extends ControladorPasteles imple
         SpinnerValueFactory<Integer> valores= new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
        valores.setValue(1);
        SpCantidad.setValueFactory(valores);
+       
        
     }   
     

@@ -11,7 +11,7 @@ import modelo.Pasteles;
  * @author carlos
  */
 public class ControladorPasteles {
-    protected static ArrayList<Pasteles> listPasteles = new ArrayList<>();
+    public static ArrayList<Pasteles> listPasteles = new ArrayList<>();
     
     public int buscar(String ID){
         for(int i=0;i<listPasteles.size();i++){

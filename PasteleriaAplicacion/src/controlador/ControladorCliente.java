@@ -19,7 +19,7 @@ public class ControladorCliente {
     /**
      * ArrayList donde guardar a los clientes
      */
-    protected static ArrayList<Cliente> clientes = new ArrayList<>();
+    public static ArrayList<Cliente> clientes = new ArrayList<>();
     
     /**
      * Método para buscar un cliente en el Array por ID
