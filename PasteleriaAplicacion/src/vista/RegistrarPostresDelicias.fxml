@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorVistaRegistrarPostresDelicias">
+   <children>
+      <TableView fx:id="tbPDelicias" layoutX="11.0" layoutY="14.0" onMouseClicked="#seleccionarP" prefHeight="407.0" prefWidth="864.0">
+        <columns>
+          <TableColumn fx:id="colIDP" prefWidth="162.0" text="ID" />
+          <TableColumn fx:id="colTipoP" prefWidth="179.0" text="TIPO" />
+            <TableColumn fx:id="colNombreP" prefWidth="222.0" text="NOMBRE" />
+            <TableColumn fx:id="colPrecioP" prefWidth="149.0" text="PRECIO" />
+            <TableColumn fx:id="colCantidadP" prefWidth="151.0" text="CANTIDAD" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregarPos" layoutX="386.0" layoutY="493.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="31.0" prefWidth="116.0" text="Aceptar" />
+      <Button fx:id="btnEditarPos" layoutX="525.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificarP" prefHeight="31.0" prefWidth="116.0" text="Editar" />
+      <Button fx:id="btnEliminarPos" layoutX="659.0" layoutY="494.0" mnemonicParsing="false" onAction="#eliminarP" prefHeight="31.0" prefWidth="116.0" text="Eliminar" />
+      <TextField fx:id="txtTipop" layoutX="247.0" layoutY="447.0" prefHeight="25.0" prefWidth="116.0" />
+      <TextField fx:id="txtIDp" layoutX="55.0" layoutY="447.0" prefHeight="25.0" prefWidth="116.0" />
+      <TextField fx:id="txtNombrep" layoutX="451.0" layoutY="447.0" prefHeight="25.0" prefWidth="116.0" />
+      <TextField fx:id="txtPreciop" layoutX="651.0" layoutY="447.0" prefHeight="25.0" prefWidth="59.0" />
+      <Spinner fx:id="SpCantidadP" layoutX="800.0" layoutY="447.0" prefHeight="25.0" prefWidth="70.0" />
+      <Label fx:id="lbIDp" layoutX="30.0" layoutY="451.0" text="ID" />
+      <Label fx:id="lbTipop" layoutX="213.0" layoutY="451.0" text="TIPO" />
+      <Label fx:id="lbNombrep" layoutX="385.0" layoutY="451.0" text="NOMBRE" />
+      <Label fx:id="lbPreciop" layoutX="591.0" layoutY="451.0" text="PRECIO $" />
+      <Label fx:id="lbCantidadp" layoutX="725.0" layoutY="451.0" text="CANTIDAD" />
+      <Label fx:id="lbInventariop" layoutX="140.0" layoutY="481.0" text="TOTAL INVENTARIO" />
+      <Label layoutX="133.0" layoutY="514.0" text="\$" />
+      <Label fx:id="lbTotalp" layoutX="151.0" layoutY="507.0" prefHeight="31.0" prefWidth="95.0" />
+      <Button fx:id="btnMenu" layoutX="800.0" layoutY="494.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="31.0" prefWidth="70.0" text="Menú" />
+   </children>
+</AnchorPane>
